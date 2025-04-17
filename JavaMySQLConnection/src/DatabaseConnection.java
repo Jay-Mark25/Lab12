@@ -3,16 +3,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
-    public static void main(String[] args) {
-        String url = "jdbc:mysql://localhost:3306/school";
-        String user = "root";
-        String password = "";
-        
-        try {
-            Connection conn = DriverManager.getConnection(url, user, password);
-            System.out.println("Connected to MySQL database successfully!");
-        } catch (SQLException e) {
-            System.out.println("Connection failed! " + e.getMessage());
-        }
+    private static final String URL = "jdbc:mysql://localhost:3306/school"; // Replace with your database name
+    private static final String USER = "root"; // Replace with your username
+    private static final String PASSWORD = ""; // Replace with your password
+
+    // Method to get a database connection
+    public static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 }

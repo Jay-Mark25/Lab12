@@ -25,7 +25,7 @@ public class InsertStudent {
             }
         } catch (SQLException e) {
             System.err.println("Failed to insert student record. Please check the database connection and input values.");
-            e.printStackTrace();
+            System.err.println("Error: " + e.getMessage());
         }
     }
 }
